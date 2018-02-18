@@ -41,4 +41,11 @@ export default class DatabaseService {
       .doc(playerNik.toString())
       .update(data);
   }
+
+  deletePlayer(playerNik) {
+    return this._firestore
+      .collection(this._playerCollections)
+      .doc(playerNik.toString())
+      .delete();
+  }
 }

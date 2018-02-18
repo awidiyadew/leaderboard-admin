@@ -27,3 +27,10 @@ function executeUpdatePlayer(playerNik, data) {
     .then(() => console.log('update success'))
     .catch((error) => console.log(`update error: ${error.message}`));
 }
+
+function executeDeletePlayer(playerNik) {
+  databaseService
+    .deletePlayer(playerNik)
+    .then(() => console.log('delete success'))
+    .catch((error) => console.log(`delete error: ${error.message}`));
+}
