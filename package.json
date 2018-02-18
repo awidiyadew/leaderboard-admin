@@ -1,0 +1,19 @@
+{
+  "name": "leaderboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src/app.js --out-file=build/app.js --presets=env",
+    "start": "node build/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@firebase/app": "^0.1.9",
+    "@firebase/firestore": "^0.3.3",
+    "babel-preset-env": "^1.6.1",
+    "dotenv": "^5.0.0"
+  }
+}
