@@ -1,3 +1,6 @@
+/**
+ * Represent a entity in LeaderBoard
+ */
 export default class Player {
   constructor(nik, name, nationality, photo, score) {
     this._nik = nik;
