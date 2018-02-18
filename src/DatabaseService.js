@@ -34,4 +34,11 @@ export default class DatabaseService {
       .doc(player.getNik())
       .set(player.toObject());
   }
+
+  updatePlayer(playerNik, data) {
+    return this._firestore
+      .collection(this._playerCollections)
+      .doc(playerNik.toString())
+      .update(data);
+  }
 }
