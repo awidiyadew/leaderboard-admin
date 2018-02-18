@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel src -d build --presets=env",
-    "start": "babel src -d build --presets=env && node build/app.js"
+    "start": "babel src -d build --presets=env && node build/LeaderBoardApp.js"
   },
   "author": "",
   "license": "ISC",
