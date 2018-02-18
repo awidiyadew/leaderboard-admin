@@ -9,7 +9,7 @@ export default class LeaderBoard {
   }
 
   executeReadPlayers() {
-    databaseService
+    this._databaseService
       .readPlayers()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
@@ -19,21 +19,21 @@ export default class LeaderBoard {
   }
 
   executeCreatePlayer(player) {
-    databaseService
+    this._databaseService
       .createPlayer(player)
       .then(() => console.log(`create success`))
       .catch((error => console.log(`create error: ${error.message}`)));
   }
 
   executeUpdatePlayer(playerNik, data) {
-    databaseService
+    this._databaseService
       .updatePlayer(playerNik, data)
       .then(() => console.log('update success'))
       .catch((error) => console.log(`update error: ${error.message}`));
   }
 
   executeDeletePlayer(playerNik) {
-    databaseService
+    this._databaseService
       .deletePlayer(playerNik)
       .then(() => console.log('delete success'))
       .catch((error) => console.log(`delete error: ${error.message}`));
