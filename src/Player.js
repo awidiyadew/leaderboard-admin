@@ -1,5 +1,5 @@
 /**
- * Represent a entity in LeaderBoard
+ * Represent an entity in LeaderBoard
  */
 export default class Player {
   constructor(nik, name, nationality, photo, score) {
