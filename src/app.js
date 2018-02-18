@@ -1,29 +1,29 @@
-import { firebase } from '@firebase/app';
-import '@firebase/firestore';
-import dotenv from 'dotenv';
-dotenv.config();
+import DatabaseService from './DatabaseService';
+import Player from './Player';
 
-function init() {
-  const config = {
-    apiKey: process.env.API_KEY,
-    authDomain: process.env.AUTH_DOMAIN,
-    databaseURL: process.env.DATABASE_URL,
-    projectId: process.env.PROJECT_ID,
-    storageBucket: process.env.STORAGE_BUCKET,
-    messagingSenderId: process.env.MESSAGING_SENDER_ID
-  };
+const databaseService = new DatabaseService();
+const examplePlayer = new Player(90909, 'Huhuh', 'Indonesia', 'no-photo', 99);
 
-  firebase.initializeApp(config);
-  const firestore = firebase.firestore();
-  firestore
-    .collection('players')
-    .get()
+function executeReadPlayers() {
+  databaseService
+    .readPlayers()
     .then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
-        console.log(`${doc.id} => ${doc.data().name}`);
+        console.log(`doc id: ${doc.id}, name: ${doc.data().name}`);
       });
     });
-
 }
 
-init();
+function executeCreatePlayer(player) {
+  databaseService
+    .createPlayer(player)
+    .then(() => console.log(`create success`))
+    .catch((error => console.log(`create error: ${error.message}`)));
+}
+
+function executeUpdatePlayer(playerNik, data) {
+  databaseService
+    .updatePlayer(playerNik, data)
+    .then(() => console.log('update success'))
+    .catch((error) => console.log(`update error: ${error.message}`));
+}
