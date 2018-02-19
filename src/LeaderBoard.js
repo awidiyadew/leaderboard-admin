@@ -32,6 +32,10 @@ export default class LeaderBoard {
       .catch((error) => console.log(`update error: ${error.message}`));
   }
 
+  executeUpdatePlayerScore(playerNik, score) {
+    this.executeUpdatePlayer(playerNik, {score});
+  }
+
   executeDeletePlayer(playerNik) {
     this._databaseService
       .deletePlayer(playerNik)

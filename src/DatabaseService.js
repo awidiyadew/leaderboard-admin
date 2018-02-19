@@ -42,6 +42,10 @@ export default class DatabaseService {
       .update(data);
   }
 
+  updatePlayerScore(playerNik, score) {
+    return this.updatePlayer(playerNik, { score });
+  }
+
   deletePlayer(playerNik) {
     return this._firestore
       .collection(this._playerCollections)
