@@ -5,14 +5,17 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel src -d build --presets=env",
+    "build": "babel src -d build --presets=env --plugins transform-async-to-generator",
     "start": "babel src -d build --presets=env && node build/LeaderBoardApp.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@firebase/app": "^0.1.9",
-    "@firebase/firestore": "^0.3.3",
+    "@firebase/firestore": "^0.3.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "dotenv": "^5.0.0"
   }
