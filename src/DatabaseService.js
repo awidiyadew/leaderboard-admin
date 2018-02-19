@@ -19,25 +19,25 @@ export default class DatabaseService {
     firebase.initializeApp(config);
 
     this._firestore = firebase.firestore();
-    this._playerCollections = 'players';
+    this._COLLECTION_NAME = 'players';
   }
 
   readPlayers() {
     return this._firestore
-      .collection(this._playerCollections)
+      .collection(this._COLLECTION_NAME)
       .get();
   }
 
   createPlayer(player) {
     return this._firestore
-      .collection(this._playerCollections)
+      .collection(this._COLLECTION_NAME)
       .doc(player.getNik())
       .set(player.toObject());
   }
 
   updatePlayer(playerNik, data) {
     return this._firestore
-      .collection(this._playerCollections)
+      .collection(this._COLLECTION_NAME)
       .doc(playerNik.toString())
       .update(data);
   }
@@ -48,7 +48,7 @@ export default class DatabaseService {
 
   deletePlayer(playerNik) {
     return this._firestore
-      .collection(this._playerCollections)
+      .collection(this._COLLECTION_NAME)
       .doc(playerNik.toString())
       .delete();
   }
