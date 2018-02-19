@@ -13,7 +13,7 @@ export default class LeaderBoard {
       .readPlayers()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-          console.log(`doc id: ${doc.id}, name: ${doc.data().name}`);
+          console.log(`${doc.id} - ${doc.data().name}`);
         });
       });
   }
