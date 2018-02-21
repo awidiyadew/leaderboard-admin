@@ -12,8 +12,11 @@ export default class LeaderBoard {
     this._databaseService
       .readPlayers()
       .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          console.log(`${doc.id} - ${doc.data().name}`);
+        let position = 1;
+        querySnapshot.forEach((snapshot) => {
+          const player = snapshot.data();
+          console.log(`[${position}] ${snapshot.id} - ${player.name}`);
+          position++;
         });
       });
   }

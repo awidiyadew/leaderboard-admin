@@ -25,6 +25,7 @@ export default class DatabaseService {
   readPlayers() {
     return this._firestore
       .collection(this._COLLECTION_NAME)
+      .orderBy('score', 'desc')
       .get();
   }
 
