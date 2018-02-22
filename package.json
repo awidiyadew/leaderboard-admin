@@ -12,7 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "@firebase/app": "^0.1.9",
-    "@firebase/firestore": "^0.3.3"
+    "@firebase/firestore": "^0.3.3",
+    "babel-cli": "^6.26.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
